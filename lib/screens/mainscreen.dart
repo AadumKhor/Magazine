@@ -78,17 +78,18 @@ class _MainScreenState extends State<MainScreen> {
       child: Container(
         width: double.infinity,
         height: 200.0,
-        // decoration: BoxDecoration(border: Border.all()),
-        child: Row(
+        child: Stack(
           children: <Widget>[
-            Container(
-                alignment: index % 2 == 0
-                    ? Alignment.centerRight
-                    : Alignment.centerLeft,
-                height: 180.0,
-                width: 180.0,
-                decoration: BoxDecoration(
-                    border: Border.all(width: 2.0, color: Colors.black))),
+            Align(
+              alignment:
+                  index % 2 == 0 ? Alignment.centerLeft : Alignment.centerRight,
+              child: Container(
+                  height: 180.0,
+                  width: 180.0,
+                  decoration: BoxDecoration(image: DecorationImage(
+                    image: NetworkImage(list[index].imgPath)
+                  ))),
+            ),
             SizedBox(
               width: 30.0,
             ),
@@ -104,35 +105,54 @@ class _MainScreenState extends State<MainScreen> {
   Widget _buildRightContent(int index) {
     return Column(
       children: <Widget>[
-        _buildDateAndLine(),
+        _buildDateAndLine(index),
         SizedBox(
           height: 10.0,
         ),
-        _buildTitleAdnRead(index)
+        _buildTitleAndRead(index)
       ],
     );
   }
 
   //! contains the title name and read article subtitle
-  Widget _buildTitleAdnRead(int index) {
-    return Column(
-      children: <Widget>[
-        Text(
-          list[index].title,
-          style: TextStyle(
-              color: Colors.black, fontSize: 30.0, fontWeight: FontWeight.w500),
-        ),
-        SizedBox(height: 10.0,),
-        Text('Read Article' , style: TextStyle(fontSize: 20.0 , color: Colors.grey),)
-      ],
+  Widget _buildTitleAndRead(int index) {
+    return Align(
+      alignment: index % 2 == 0 ? Alignment.centerRight : Alignment.centerLeft,
+      child: Column(
+        children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              list[index].title,
+              style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 30.0,
+                  fontWeight: FontWeight.w500),
+            ),
+          ),
+          SizedBox(
+            height: 5.0,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              'Read Article',
+              style: TextStyle(fontSize: 20.0, color: Colors.grey),
+            ),
+          )
+        ],
+      ),
     );
   }
 
   //! contains the line and the date
-  Widget _buildDateAndLine() {
+  Widget _buildDateAndLine(int index) {
     return Padding(
       padding: const EdgeInsets.only(top: 10.0),
       child: Container(
+        // alignment:
+        //     index % 2 == 0 ? Alignment.centerLeft : Alignment.centerRight,
+        width: double.infinity,
         height: 50.0,
         child: Row(
           children: <Widget>[
