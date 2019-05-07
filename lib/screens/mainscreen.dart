@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:magazine_app/article.dart';
 
 class MainScreen extends StatefulWidget {
   @override
@@ -54,7 +55,30 @@ class _MainScreenState extends State<MainScreen> {
               Padding(
                 padding: const EdgeInsets.only(top: 5.0,left: 40.0 , right: 40.0),
                 child: Divider(height: 10.0, color: Colors.black,indent: 5.0,),
+              ),
+              ListView.builder(
+                shrinkWrap: true,
+                itemCount: list.length,
+                itemBuilder: _buildArticles,
               )
+        ],
+      ),
+    );
+  }
+
+  Widget _buildArticles(BuildContext context , int index){
+    return Padding(
+      padding: const EdgeInsets.all(20.0),
+      child: Row(
+        children: <Widget>[
+          Container(
+            height: 200.0,
+            width: 200.0,
+            decoration:BoxDecoration(
+              borderRadius:BorderRadius.circular(20.0),
+              border: Border.all(width: 2.0 , color: Colors.black)
+            )
+          )
         ],
       ),
     );
