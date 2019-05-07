@@ -43,7 +43,7 @@ class _MainScreenState extends State<MainScreen> {
           Align(
               alignment: Alignment.centerLeft,
               child: Padding(
-                padding: const EdgeInsets.only(left:10.0),
+                padding: const EdgeInsets.only(left: 10.0),
                 child: Text(
                   'MAGAZINE',
                   style: TextStyle(
@@ -52,34 +52,107 @@ class _MainScreenState extends State<MainScreen> {
                   ),
                 ),
               )),
-              Padding(
-                padding: const EdgeInsets.only(top: 5.0,left: 40.0 , right: 40.0),
-                child: Divider(height: 10.0, color: Colors.black,indent: 5.0,),
-              ),
-              ListView.builder(
-                shrinkWrap: true,
-                itemCount: list.length,
-                itemBuilder: _buildArticles,
-              )
+          Padding(
+            padding: const EdgeInsets.only(top: 5.0, left: 40.0, right: 40.0),
+            child: Divider(
+              height: 10.0,
+              color: Colors.black,
+              indent: 5.0,
+            ),
+          ),
+          Expanded(
+            child: ListView.builder(
+              shrinkWrap: true,
+              itemCount: list.length,
+              itemBuilder: _buildArticles,
+            ),
+          )
         ],
       ),
     );
   }
 
-  Widget _buildArticles(BuildContext context , int index){
+  Widget _buildArticles(BuildContext context, int index) {
     return Padding(
-      padding: const EdgeInsets.all(20.0),
-      child: Row(
-        children: <Widget>[
-          Container(
-            height: 200.0,
-            width: 200.0,
-            decoration:BoxDecoration(
-              borderRadius:BorderRadius.circular(20.0),
-              border: Border.all(width: 2.0 , color: Colors.black)
+      padding: const EdgeInsets.all(10.0),
+      child: Container(
+        width: double.infinity,
+        height: 200.0,
+        // decoration: BoxDecoration(border: Border.all()),
+        child: Row(
+          children: <Widget>[
+            Container(
+                alignment: index % 2 == 0
+                    ? Alignment.centerRight
+                    : Alignment.centerLeft,
+                height: 180.0,
+                width: 180.0,
+                decoration: BoxDecoration(
+                    border: Border.all(width: 2.0, color: Colors.black))),
+            SizedBox(
+              width: 30.0,
+            ),
+            _buildRightContent(index)
+          ],
+        ),
+      ),
+    );
+  }
+
+  // ! the content that cotnains the date of the article and
+  // ! the name and read article option
+  Widget _buildRightContent(int index) {
+    return Column(
+      children: <Widget>[
+        _buildDateAndLine(),
+        SizedBox(
+          height: 10.0,
+        ),
+        _buildTitleAdnRead(index)
+      ],
+    );
+  }
+
+  //! contains the title name and read article subtitle
+  Widget _buildTitleAdnRead(int index) {
+    return Column(
+      children: <Widget>[
+        Text(
+          list[index].title,
+          style: TextStyle(
+              color: Colors.black, fontSize: 30.0, fontWeight: FontWeight.w500),
+        ),
+        SizedBox(height: 10.0,),
+        Text('Read Article' , style: TextStyle(fontSize: 20.0 , color: Colors.grey),)
+      ],
+    );
+  }
+
+  //! contains the line and the date
+  Widget _buildDateAndLine() {
+    return Padding(
+      padding: const EdgeInsets.only(top: 10.0),
+      child: Container(
+        height: 50.0,
+        child: Row(
+          children: <Widget>[
+            Container(
+              height: 50.0,
+              width: 4.0,
+              color: Colors.blue[900],
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 10.0),
+              child: Text(
+                '- May 5TH 2019',
+                style: TextStyle(
+                    fontSize: 20.0,
+                    color: Colors.black,
+                    fontWeight: FontWeight.w300),
+              ),
             )
-          )
-        ],
+          ],
+        ),
       ),
     );
   }
