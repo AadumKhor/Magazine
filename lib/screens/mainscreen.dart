@@ -75,26 +75,30 @@ class _MainScreenState extends State<MainScreen> {
   Widget _buildArticles(BuildContext context, int index) {
     return Padding(
       padding: const EdgeInsets.all(10.0),
-      child: Container(
-        width: double.infinity,
-        height: 200.0,
-        child: Stack(
-          children: <Widget>[
-            Align(
-              alignment:
-                  index % 2 == 0 ? Alignment.centerLeft : Alignment.centerRight,
-              child: Container(
-                  height: 180.0,
-                  width: 180.0,
-                  decoration: BoxDecoration(image: DecorationImage(
-                    image: NetworkImage(list[index].imgPath)
-                  ))),
-            ),
-            SizedBox(
-              width: 30.0,
-            ),
-            _buildRightContent(index)
-          ],
+      child: GestureDetector(
+        onTap: ()=> Navigator.pushNamed(context, '/splash'),
+        child: Container(
+          width: double.infinity,
+          height: 200.0,
+          child: Stack(
+            children: <Widget>[
+              Align(
+                alignment: index % 2 == 0
+                    ? Alignment.centerLeft
+                    : Alignment.centerRight,
+                child: Container(
+                    height: 180.0,
+                    width: 180.0,
+                    decoration: BoxDecoration(
+                        image: DecorationImage(
+                            image: NetworkImage(list[index].imgPath)))),
+              ),
+              SizedBox(
+                width: 30.0,
+              ),
+              _buildRightContent(index)
+            ],
+          ),
         ),
       ),
     );
