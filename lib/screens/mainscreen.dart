@@ -1,12 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:magazine_app/article.dart';
+import 'package:magazine_app/screens/article_splashscreen.dart';
 
 class MainScreen extends StatefulWidget {
   @override
   _MainScreenState createState() => _MainScreenState();
 }
 
-class _MainScreenState extends State<MainScreen> {
+class _MainScreenState extends State<MainScreen>
+    with SingleTickerProviderStateMixin {
+  // AnimationController _controller;
+
+  // @override
+  // void initState() {
+  //   _controller = new AnimationController(
+  //       vsync: this, duration: Duration(milliseconds: 500));
+  //   super.initState();
+  //   _controller.forward();
+  //   if (_controller.isCompleted) {
+  //     _controller.reset();
+  //   }
+  // }
+
+  // @override
+  // void dispose() {
+  //   _controller.dispose();
+  //   super.dispose();
+  // }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -76,7 +97,15 @@ class _MainScreenState extends State<MainScreen> {
     return Padding(
       padding: const EdgeInsets.all(10.0),
       child: GestureDetector(
-        onTap: ()=> Navigator.pushNamed(context, '/splash'),
+        onTap: () => Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => 
+                Opacity(
+                opacity: 0.5,
+                child:SplashScreen(
+                  index: index,
+                )))),
         child: Container(
           width: double.infinity,
           height: 200.0,
