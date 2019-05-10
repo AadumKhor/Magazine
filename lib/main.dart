@@ -10,7 +10,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Magazines',
       theme: ThemeData(
-        primarySwatch: Colors.yellow
+        primarySwatch: Colors.yellow,
+        fontFamily: 'Playfair'
       ),
       debugShowCheckedModeBanner: false,
       home: MainScreen(),

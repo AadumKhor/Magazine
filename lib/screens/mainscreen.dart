@@ -68,6 +68,7 @@ class _MainScreenState extends State<MainScreen>
                 child: Text(
                   'MAGAZINE',
                   style: TextStyle(
+                    fontFamily: 'Playfair',
                     fontSize: 60.0,
                     fontWeight: FontWeight.w200,
                   ),
@@ -100,12 +101,11 @@ class _MainScreenState extends State<MainScreen>
         onTap: () => Navigator.push(
             context,
             MaterialPageRoute(
-                builder: (context) => 
-                Opacity(
-                opacity: 0.5,
-                child:SplashScreen(
-                  index: index,
-                )))),
+                builder: (context) => Opacity(
+                    opacity: 0.5,
+                    child: SplashScreen(
+                      index: index,
+                    )))),
         child: Container(
           width: double.infinity,
           height: 200.0,
@@ -158,6 +158,7 @@ class _MainScreenState extends State<MainScreen>
             child: Text(
               list[index].title,
               style: TextStyle(
+                  fontFamily: 'Playfair',
                   color: Colors.black,
                   fontSize: 30.0,
                   fontWeight: FontWeight.w500),
