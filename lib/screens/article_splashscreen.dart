@@ -1,22 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:magazine_app/article.dart';
 
-class SplashScreen extends StatefulWidget {
+class SplashScreen extends StatelessWidget{
   final int index;
-  SplashScreen({Key key, this.index}) : super(key: key);
+  // final String title;
+  // final String article;
 
-  @override
-  _SplashScreenState createState() => _SplashScreenState();
-}
+  SplashScreen({this.index , Key key}) : super(key: key);
 
-class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         body: Stack(
       fit: StackFit.expand,
       children: <Widget>[
-        Image.network(list[widget.index].imgPath, fit: BoxFit.cover),
+        Image.network(list[index].imgPath, fit: BoxFit.cover),
         Positioned(
           top: 20.0,
           child: IconButton(
@@ -30,7 +28,7 @@ class _SplashScreenState extends State<SplashScreen> {
         ),
         Center(
             child: Text(
-          list[widget.index].title,
+          list[index].title,
           style: TextStyle(
               color: Colors.white,
               fontSize: 50.0,
@@ -40,13 +38,18 @@ class _SplashScreenState extends State<SplashScreen> {
         Positioned(
           right: 20.0,
           bottom: 20.0,
-          child: Text(
-            'Read Article',
-            style: TextStyle(
-                fontSize: 30.0,
-                letterSpacing: 5.0,
-                fontWeight: FontWeight.w400,
-                color: Colors.white),
+          child: GestureDetector(
+            onTap: () {
+              Navigator.pushNamed(context, '/article');
+            },
+            child: Text(
+              'Read Article',
+              style: TextStyle(
+                  fontSize: 30.0,
+                  letterSpacing: 5.0,
+                  fontWeight: FontWeight.w400,
+                  color: Colors.white),
+            ),
           ),
         )
       ],

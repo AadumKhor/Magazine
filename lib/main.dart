@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:magazine_app/screens/article_mainscreen.dart';
 import 'package:magazine_app/screens/article_splashscreen.dart';
 import 'package:magazine_app/screens/mainscreen.dart';
 
@@ -16,7 +17,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: MainScreen(),
       routes: {
-        '/splash' : (context)=> SplashScreen()
+        '/splash' : (context)=> SplashScreen(),
+        '/article':(context)=> Content()
       },
     );
   }

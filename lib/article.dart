@@ -3,13 +3,15 @@ class Article {
   String date;
   String title;
   String data;
+  String content;
 
-  Article({this.imgPath, this.data, this.title, this.date});
+  Article({this.imgPath, this.data, this.title, this.date , this.content});
 }
 
 List<Article> list = [
   Article(
       title: 'COLOR \nMOOD',
+      content: 'LoremIpsumasfhdaushfquiasbfikagudhflkjasbvkjasdbhflkjasdbnclkjjasbdfuisasgdblkcjaskdbclakuehriaudgbcvnba sd,mbnfaliudsbxfckbnasd,xnbc laiusdhfbcajsdbcx adfhbklasjdbfclkajbsdxf cvalksdjbxfcakljsdvfc lakxjbfcl avsdblfcaiwedblkcxj na,x lkajbsdlfkjchalksb x;kj;bfc;jabsd;kjcb',
       imgPath:
           'http://www.wallpaperbetter.com/wallpaper/1010/55/778/powder-colorful-splash-1080P-wallpaper-middle-size.jpg'),
   Article(

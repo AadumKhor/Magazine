@@ -120,6 +120,7 @@ class _MainScreenState extends State<MainScreen>
                     width: 180.0,
                     decoration: BoxDecoration(
                         image: DecorationImage(
+                          fit: BoxFit.contain,
                             image: NetworkImage(list[index].imgPath)))),
               ),
               SizedBox(
@@ -168,7 +169,7 @@ class _MainScreenState extends State<MainScreen>
             padding: const EdgeInsets.all(8.0),
             child: Text(
               'Read Article',
-              style: TextStyle(fontSize: 10.0, color: Colors.grey),
+              style: TextStyle(fontSize: 20.0, color: Colors.grey),
             ),
           )
         ],
@@ -184,7 +185,7 @@ class _MainScreenState extends State<MainScreen>
         // alignment:
         //     index % 2 == 0 ? Alignment.centerLeft : Alignment.centerRight,
         width: double.infinity,
-        height: 50.0,
+        height: 40.0,
         child: Row(
           children: <Widget>[
             Container(
