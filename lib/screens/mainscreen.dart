@@ -139,9 +139,6 @@ class _MainScreenState extends State<MainScreen>
     return Column(
       children: <Widget>[
         _buildDateAndLine(index),
-        SizedBox(
-          height: 10.0,
-        ),
         _buildTitleAndRead(index)
       ],
     );
@@ -171,7 +168,7 @@ class _MainScreenState extends State<MainScreen>
             padding: const EdgeInsets.all(8.0),
             child: Text(
               'Read Article',
-              style: TextStyle(fontSize: 20.0, color: Colors.grey),
+              style: TextStyle(fontSize: 10.0, color: Colors.grey),
             ),
           )
         ],
