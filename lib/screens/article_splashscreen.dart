@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:magazine_app/article.dart';
+import 'package:magazine_app/screens/article_mainscreen.dart';
 
 class SplashScreen extends StatelessWidget{
   final int index;
@@ -40,7 +41,7 @@ class SplashScreen extends StatelessWidget{
           bottom: 20.0,
           child: GestureDetector(
             onTap: () {
-              Navigator.pushNamed(context, '/article');
+              Navigator.push(context , MaterialPageRoute(builder: (context) => Content(index: index,)));
             },
             child: Text(
               'Read Article',

@@ -11,7 +11,7 @@ class Article {
 List<Article> list = [
   Article(
       title: 'COLOR \nMOOD',
-      content: 'LoremIpsumasfhdaushfquiasbfikagudhflkjasbvkjasdbhflkjasdbnclkjjasbdfuisasgdblkcjaskdbclakuehriaudgbcvnba sd,mbnfaliudsbxfckbnasd,xnbc laiusdhfbcajsdbcx adfhbklasjdbfclkajbsdxf cvalksdjbxfcakljsdvfc lakxjbfcl avsdblfcaiwedblkcxj na,x lkajbsdlfkjchalksb x;kj;bfc;jabsd;kjcb',
+      content: 'LoremIpsumasfhdaushfquiasbfikagudhflkjasbvkjasdbhflkjasdbnclkjjasbdfuisasgdblkcjaskdbclakuehriaudgbcvnba sd,mbnfaliudsbxfckbnasd,xnbc laiusdhfbcajsdbcx adfhbklasjdbfclkajbsdxf cvalksdjbxfcakljsdvfc lakxjbfcl avsdblfcaiwedblkcxj na,x lkajbsdlfkjchalksb x;kj;bfc;jabsd;kjcbkdshfaudofihaslkdjbnnlaskjhfasdohfclknaSBXFOUAHD;JCB LAKSHDGFCJAHSDLFKJVBF;AKFJG;KJH;AJFGBB;;jgbalcjk vlakjehrfcansdxmnc algdbfc;ajsdnxclkj baldsjfxgc; jknx;kkjfg[aoidsgf;c b;adjghf[auoge;dcjxb ;ajsh[drouhgsddjfh[aoudhhf;jbscv[ugadvnsajdbfpouhaso;idf',
       imgPath:
           'http://www.wallpaperbetter.com/wallpaper/1010/55/778/powder-colorful-splash-1080P-wallpaper-middle-size.jpg'),
   Article(
